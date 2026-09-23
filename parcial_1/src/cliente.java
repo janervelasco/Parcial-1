@@ -31,5 +31,12 @@ public class cliente(){
     public String getTelefono() {return Telefono;}
     public void setTelefono(String telefono) {return telefono;}
 
-    
+    public String getEmail() {return email;}
+    public void setEmail(String email) {return  email;}
+
+    public String getPaisProcedencia() {return paisProcedencia;}
+    public void setPaisProcedencia(String paisProcedencia) {this.paisProcedencia = paisProcedencia;}
+
+    public proyecto[] getListProyectos() {return listProyectos;}
+    public void setListProyectos(proyecto[] listProyectos) {this.listProyectos = listProyectos;}
 }
