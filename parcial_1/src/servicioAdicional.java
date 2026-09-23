@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+<<<<<<< HEAD
 public class servicioAdicional(){
 
     private String codigo;
@@ -34,3 +35,67 @@ public class servicioAdicional(){
     public boolean isDisponible() {return disponible;}
     public void setDisponible(boolean disponible) {this.disponible = disponible;}
 }
+=======
+
+
+
+  public class servicioAdicional{
+
+      private String codigo;
+      private String nombre;
+      private String descripcion;
+      private double precio;
+      private boolean disponible;
+
+
+
+      public servicioAdicional(String codigo, String nombre, String descripcion,
+      double precio,boolean disponible){
+          this.codigo = codigo;
+          this.nombre = nombre;
+          this.descripcion = descripcion;
+          this.precio = precio;
+          this.disponible = disponible;
+      }
+
+      public String getCodigo() {
+          return codigo;
+      }
+
+      public void setCodigo(String codigo) {
+          this.codigo = codigo;
+      }
+
+      public String getNombre() {
+          return nombre;
+      }
+
+      public void setNombre(String nombre) {
+          this.nombre = nombre;
+      }
+
+      public String getDescripcion() {
+          return descripcion;
+      }
+
+      public void setDescripcion(String descripcion) {
+          this.descripcion = descripcion;
+      }
+
+      public double getPrecio() {
+          return precio;
+      }
+
+      public void setPrecio(double precio) {
+          this.precio = precio;
+      }
+
+      public boolean isDisponible() {
+          return disponible;
+      }
+
+      public void setDisponible(boolean disponible) {
+          this.disponible = disponible;
+      }
+  }
+>>>>>>> 1be922a301f99c74ed689eb4cfd5c681461f2ed2
