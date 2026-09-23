@@ -35,7 +35,6 @@ public class Desarollador() {
     public String getEquipoTrabajo() {
         return equipoTrabajo;
     }
-
     public void setEquipoTrabajo(String equipoTrabajo) {
         this.equipoTrabajo = equipoTrabajo;
     }
@@ -43,7 +42,6 @@ public class Desarollador() {
     public String getNivel() {
         return nivel;
     }
-
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
@@ -51,15 +49,11 @@ public class Desarollador() {
     public int getMaxProyectosSimultaneos() {
         return maxProyectosSimultaneos;
     }
-
-    public void setMaxProyectosSimultaneos(int maxProyectosSimultaneos) {
-        this.maxProyectosSimultaneos = maxProyectosSimultaneos;
-    }
+    public void setMaxProyectosSimultaneos(int maxProyectosSimultaneos) {return maxProyectosSimultaneos;}
 
     public double getTarifaPorDia() {
         return tarifaPorDia;
     }
-
     public void setTarifaPorDia(double tarifaPorDia) {
         this.tarifaPorDia = tarifaPorDia;
     }
@@ -67,7 +61,6 @@ public class Desarollador() {
     public String getEstado() {
         return estado;
     }
-
     public void setEstado(String estado) {
         this.estado = estado;
     }

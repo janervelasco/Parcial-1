@@ -23,16 +23,17 @@ public class cliente(){
     }
 
     public String getDocumento() {return documento;}
-    public void setDocumento(String documento) {return documento;}
+    public void setDocumento(String documento) {this.documento = documento;}
 
     public String getNombreCompleto() {return nombreCompleto;}
-    public void setNombreCompleto(String nombreCompleto) {return nombreCompleto;}
+    public void setNombreCompleto(String nombreCompleto) {this.nombreCompleto = nombreCompleto;}
 
     public String getTelefono() {return Telefono;}
-    public void setTelefono(String telefono) {return telefono;}
+    public void setTelefono(String telefono) {this.telefono = telefono;}
 
     public String getEmail() {return email;}
-    public void setEmail(String email) {return  email;}
+
+    public void setEmail(String email) {this.email = email;}
 
     public String getPaisProcedencia() {return paisProcedencia;}
     public void setPaisProcedencia(String paisProcedencia) {this.paisProcedencia = paisProcedencia;}
