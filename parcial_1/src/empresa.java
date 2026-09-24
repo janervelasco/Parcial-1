@@ -134,8 +134,72 @@ public class empresa{
         }
         return -1;
     }
+    // CALCULAR INGRESOS TOTALES
+    public double calcularIngresosTotales() {
+        double ingresosTotales = 0;
 
+        // 1. Sumamos todos los proyectos
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] != null) {
+                ingresosTotales += listProyectos[i].getValorTotal();
+            }
+        }
 
+        // 2. Sumamos todos los servicios adicionales con su propio ciclo
+        for (int j = 0; j < listServiciioAdcional.length; j++) {
+            if (listServiciioAdcional[j] != null) {
+                ingresosTotales += listServiciioAdcional[j].getPrecio();
+            }
+        }
+
+        return ingresosTotales;
+    }
+    public boolean asignarProyectoACliente(String documento, String codigoProyecto) {
+        cliente clienteEncontrado = null;
+        proyecto proyectoEncontrado = null;
+
+        // Buscar el cliente en el arreglo
+        for (int i = 0; i < listClientes.length; i++) {
+            if (listClientes[i] != null && listClientes[i].getDocumento().equals(documento)) {
+                clienteEncontrado = listClientes[i];
+                break;
+            }
+        }
+
+        // Buscar el proyecto en el arreglo
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] != null && listProyectos[i].getCodigo().equals(codigoProyecto)) {
+                proyectoEncontrado = listProyectos[i];
+                break;
+            }
+        }
+
+        // Si ambos existen, vinculamos el proyecto al cliente
+        if (clienteEncontrado != null && proyectoEncontrado != null) {
+            return clienteEncontrado.asignarProyectoCliente(proyectoEncontrado);
+        }
+
+        return false; // Retorna falso si no encontró al cliente o al proyecto
+    }
+
+    public String listarProyectos() {
+        String reporte = "--- LISTA DE PROYECTOS ---\n";
+        boolean hayProyectos = false;
+
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] != null) {
+                reporte += "Código: " + listProyectos[i].getCodigo() +
+                        " | Estado: " + listProyectos[i].getEstado() +
+                        " | Valor: " + listProyectos[i].getValorTotal() + "\n";
+                hayProyectos = true;
+            }
+        }
+
+        if (!hayProyectos) {
+            return "No hay proyectos registrados todavía.";
+        }
+        return reporte;
+    }
     // GETTERS Y SETTERS
 
     public String getNombreComercial() {

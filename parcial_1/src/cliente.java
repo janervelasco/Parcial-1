@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class cliente{
+public class cliente {
 
     private String documento;
     private String nombreCompleto;
@@ -10,8 +10,8 @@ public class cliente{
 
     private proyecto[] listProyectos;
 
-    public cliente(String documento, String nombreCompleto , String telefono , String email ,
-                   String paisProcedencia){
+    public cliente(String documento, String nombreCompleto, String telefono, String email,
+                   String paisProcedencia) {
 
         this.documento = documento;
         this.nombreCompleto = nombreCompleto;
@@ -22,22 +22,71 @@ public class cliente{
         listProyectos = new proyecto[10];
     }
 
-    public String getDocumento() {return documento;}
-    public void setDocumento(String documento) {this.documento = documento;}
+    public boolean agregarProyectoACliente(proyecto nuevoProyecto) {
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] == null) {
+                listProyectos[i] = nuevoProyecto;
+                return true;
+            }
+        }
+        return false;
+    }
 
-    public String getNombreCompleto() {return nombreCompleto;}
-    public void setNombreCompleto(String nombreCompleto) {this.nombreCompleto = nombreCompleto;}
+    public String getDocumento() {
+        return documento;
+    }
 
-    public String getTelefono() {return telefono;}
-    public void setTelefono(String telefono) {this.telefono = telefono;}
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
 
-    public String getEmail() {return email;}
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
 
-    public void setEmail(String email) {this.email = email;}
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
 
-    public String getPaisProcedencia() {return paisProcedencia;}
-    public void setPaisProcedencia(String paisProcedencia) {this.paisProcedencia = paisProcedencia;}
+    public String getTelefono() {
+        return telefono;
+    }
 
-    public proyecto[] getListProyectos() {return listProyectos;}
-    public void setListProyectos(proyecto[] listProyectos) {this.listProyectos = listProyectos;}
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPaisProcedencia() {
+        return paisProcedencia;
+    }
+
+    public void setPaisProcedencia(String paisProcedencia) {
+        this.paisProcedencia = paisProcedencia;
+    }
+
+    public proyecto[] getListProyectos() {
+        return listProyectos;
+    }
+
+    public void setListProyectos(proyecto[] listProyectos) {
+        this.listProyectos = listProyectos;
+    }
+
+    public boolean asignarProyectoCliente(proyecto proyectoEncontrado) {
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] == null) {
+                listProyectos[i] = proyectoEncontrado;
+                return true;
+            }
+        }
+        return false;
+    }
 }

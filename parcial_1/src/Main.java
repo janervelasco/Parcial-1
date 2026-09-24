@@ -17,6 +17,8 @@ public class Main {
                     "\n 3. Registrar proyecto." +
                     "\n 4. Registrar servicio adicional." +
                     "\n 5. Calcular ingresos totales." +
+                    "\n 6. asignar proyecto a cliente" +
+                    "\n 7. lista de proyectos" +
                     "\n 0. Salir del sistema"));
 
 
@@ -39,6 +41,17 @@ public class Main {
                 case 4:
                     registrarServicioAdicional();
                     break;
+                case 5:
+                    calcularIngresosTotales();
+                    break;
+                case 6:
+                    asignarProyectoCliente();
+                    break;
+                case 7:
+                    listarProyectosMain();
+                    break;
+
+
 
 
 
@@ -133,7 +146,28 @@ public class Main {
             JOptionPane.showMessageDialog(null, "no se hizo el registro");
         }
     }
+    private static void calcularIngresosTotales() {
+        double total = miEmpresa.calcularIngresosTotales();
+        JOptionPane.showMessageDialog(null, "Los ingresos totales de la empresa son: " + total);
+    }
+    private static void asignarProyectoCliente() {
+        String documento = JOptionPane.showInputDialog(null, "Ingrese el documento del cliente:");
+        if (documento == null) return;
 
+        String codigoProyecto = JOptionPane.showInputDialog(null, "Ingrese el código del proyecto a asignar:");
+        if (codigoProyecto == null) return;
+
+        boolean resultado = miEmpresa.asignarProyectoACliente(documento, codigoProyecto);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Proyecto asignado al cliente exitosamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error: No se encontró el cliente o el proyecto, o ya está asignado.");
+        }
+    }
+    private static void listarProyectosMain() {
+        String resultado = miEmpresa.listarProyectos();
+        JOptionPane.showMessageDialog(null, resultado);
+    }
 }
 
 
