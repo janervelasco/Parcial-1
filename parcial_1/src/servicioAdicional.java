@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 
-public class servicioAdicional(){
+public class servicioAdicional{
 
     private String codigo;
     private String nombre;

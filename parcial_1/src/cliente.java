@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class cliente(){
+public class cliente{
 
     private String documento;
     private String nombreCompleto;
@@ -28,7 +28,7 @@ public class cliente(){
     public String getNombreCompleto() {return nombreCompleto;}
     public void setNombreCompleto(String nombreCompleto) {this.nombreCompleto = nombreCompleto;}
 
-    public String getTelefono() {return Telefono;}
+    public String getTelefono() {return telefono;}
     public void setTelefono(String telefono) {this.telefono = telefono;}
 
     public String getEmail() {return email;}
