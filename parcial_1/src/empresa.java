@@ -19,31 +19,30 @@ public class empresa{
         this.nit = nit;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.paginaWeb =paginaWeb;
+        this.paginaWeb = paginaWeb;
 
         listClientes = new cliente[10];
         listProyectos = new proyecto[10];
         listDesarrolladores = new Desarrolador[10];
         listServiciioAdcional = new servicioAdicional[10];
+    }
 
-
-        }
     // REGISTRAR CLIENTE
-        public boolean agregarCliente(String documento, String nombreCompleto, String telefono,
-                String email, String pais){
-        cliente nuevoCliente= new cliente(documento, nombreCompleto, telefono, email,
-                pais);
-            if (encontrarIndexCliente(nuevoCliente.getDocumento()) == -1) {
-                for (int i = 0; i < listClientes.length; i++) {
-                    if (listClientes[i] == null) {
-                        listClientes[i] = nuevoCliente;
-                        return true;
-                    }
+    public boolean agregarCliente(String documento, String nombreCompleto, String telefono,
+                                  String email, String pais){
+        cliente nuevoCliente = new cliente(documento, nombreCompleto, telefono, email, pais);
+        if (encontrarIndexCliente(nuevoCliente.getDocumento()) == -1) {
+            for (int i = 0; i < listClientes.length; i++) {
+                if (listClientes[i] == null) {
+                    listClientes[i] = nuevoCliente;
+                    return true;
                 }
             }
-            return false; // Ya existe o el arreglo está lleno
         }
+        return false; // Ya existe o el arreglo está lleno
+    }
 
+    // ENCONTRAR INDEX CLIENTE
     public int encontrarIndexCliente(String cedulaBuscar) {
         for (int i = 0; i < listClientes.length; i++) {
             if (listClientes[i] != null && listClientes[i].getDocumento().equals(cedulaBuscar)) {
@@ -53,6 +52,36 @@ public class empresa{
         return -1;
     }
 
+    // REGISTRAR DESARROLLADOR
+    public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel, int maxProyectosSimultaneos,
+                                       double tarifaPorDia, String estado) {
+
+        // 1. Validamos si ya existe el desarrollador por su código
+        if (encontrarIndexDesarrollador(codigo) == -1) {
+            Desarrolador nuevoDesarrolador = new Desarrolador(codigo, equipoTrabajo, nivel, maxProyectosSimultaneos, tarifaPorDia, estado);
+
+            // 2. Buscamos espacio en el arreglo de desarrolladores
+            for (int i = 0; i < listDesarrolladores.length; i++) {
+                if (listDesarrolladores[i] == null) {
+                    listDesarrolladores[i] = nuevoDesarrolador; // Corregido aquí para usar tu variable
+                    return true;
+                }
+            }
+        }
+        return false; // Ya existe o el arreglo está lleno
+    }
+
+    // ENCONTRAR INDEX DESARROLLADOR
+    public int encontrarIndexDesarrollador(String codigoBuscar) {
+        for (int i = 0; i < listDesarrolladores.length; i++) {
+            if (listDesarrolladores[i] != null && listDesarrolladores[i].getCodigo().equals(codigoBuscar)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // GETTERS Y SETTERS
     public String getNombreComercial() {
         return nombreComercial;
     }

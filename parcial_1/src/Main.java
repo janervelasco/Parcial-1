@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import static java.lang.Double.parseDouble;
+
 public class Main {
     private static empresa miEmpresa;
     public static void main(String[] args) {
@@ -24,6 +26,10 @@ public class Main {
                 case 1:
                     registrarCliente();
                     break;
+
+                case 2:
+                    registrarDesarrolador();
+                     break;
 
 
 
@@ -61,5 +67,25 @@ public class Main {
             JOptionPane.showMessageDialog(null, "no se hizo el registro");
        }
     }
+    private static void registrarDesarrolador(){
+        String codigo = JOptionPane.showInputDialog("ingrese el codigo de desarrolador");
+        String equipoTrabajo = JOptionPane.showInputDialog("ingrese su equipo de trabajo");
+        String nivel = JOptionPane.showInputDialog("ingrese el nivel del desarrolador");
 
-}
+        int maxProyectosSimultaneos = Integer.parseInt(JOptionPane.showInputDialog("ingrese cantidad maxima de proyectos"));
+        double tarifaPorDia = parseDouble(JOptionPane.showInputDialog("ingrese la tarifa por dia"));
+
+        String estado = JOptionPane.showInputDialog("ingrese su estado");
+
+        Boolean resultado = miEmpresa.agregarDesarrolador(codigo, equipoTrabajo, nivel, maxProyectosSimultaneos,
+                tarifaPorDia, estado);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "registro exitoso");
+        } else {
+            JOptionPane.showMessageDialog(null, "no se hizo el registro");
+        }
+    }
+
+
+    }
+
