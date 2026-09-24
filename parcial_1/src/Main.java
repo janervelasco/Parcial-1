@@ -183,9 +183,9 @@ public class Main {
         boolean resultadoActualizacion = miEmpresa.actualizarDesarrollador(codigoDesarrolladorActualizar,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
 
         if(resultadoActualizacion){
-            JOptionPane.showMessageDialog(null, "Se modifico el cliente.");
+            JOptionPane.showMessageDialog(null, "Se modifico el desarrollador.");
         }else{
-            JOptionPane.showMessageDialog(null, "NO se pudo modificar el cliente.");
+            JOptionPane.showMessageDialog(null, "NO se pudo modificar el desarrollador.");
         }
     }
 
@@ -227,9 +227,9 @@ public class Main {
                 metodoPago,valorTotal);
 
         if(resultadoActualizacion){
-            JOptionPane.showMessageDialog(null, "Se modifico el cliente.");
+            JOptionPane.showMessageDialog(null, "Se modifico el proyecto.");
         }else{
-            JOptionPane.showMessageDialog(null, "NO se pudo modificar el cliente.");
+            JOptionPane.showMessageDialog(null, "NO se pudo modificar el proyecto.");
         }
     }
 
@@ -263,9 +263,9 @@ public class Main {
         boolean resultadoActualizacion = miEmpresa.actualizarServicioAdicional(codigoActualizar,nombre,descripcion,precio,disponible);
 
         if(resultadoActualizacion){
-            JOptionPane.showMessageDialog(null, "Se modifico el cliente.");
+            JOptionPane.showMessageDialog(null, "Se modifico el servicio adicional.");
         }else{
-            JOptionPane.showMessageDialog(null, "NO se pudo modificar el cliente.");
+            JOptionPane.showMessageDialog(null, "NO se pudo modificar el servicio adicional.");
         }
     }
     //--------------------------------------------------------------------------------------------------------------------
