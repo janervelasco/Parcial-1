@@ -52,6 +52,7 @@ public class empresa{
         return -1;
     }
 
+<<<<<<< HEAD
     // REGISTRAR DESARROLLADOR
     public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel, int maxProyectosSimultaneos,
                                        double tarifaPorDia, String estado) {
@@ -72,6 +73,23 @@ public class empresa{
     }
 
     // ENCONTRAR INDEX DESARROLLADOR
+=======
+//REGISTRAR DESARROllADOR
+    public boolean agregarDesarrollador(String codigo, String equipoTrabajo, String nivel,
+                              int maxProyectosSimultaneos, double tarifaPorDia, String estado){
+    Desarrolador nuevoDesarrollador= new Desarrolador(codigo,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
+    if (encontrarIndexDesarrollador(nuevoDesarrollador.getCodigo()) == -1) {
+        for (int i = 0; i < listDesarrolladores.length; i++) {
+            if (listDesarrolladores[i] == null) {
+                listDesarrolladores[i] = nuevoDesarrollador;
+                return true;
+            }
+        }
+    }
+    return false; // Ya existe o el arreglo está lleno
+}
+
+>>>>>>> 4ad2ea010b573c14a0377942a87524ba227a8899
     public int encontrarIndexDesarrollador(String codigoBuscar) {
         for (int i = 0; i < listDesarrolladores.length; i++) {
             if (listDesarrolladores[i] != null && listDesarrolladores[i].getCodigo().equals(codigoBuscar)) {
@@ -80,8 +98,11 @@ public class empresa{
         }
         return -1;
     }
+<<<<<<< HEAD
 
     // GETTERS Y SETTERS
+=======
+>>>>>>> 4ad2ea010b573c14a0377942a87524ba227a8899
     public String getNombreComercial() {
         return nombreComercial;
     }
