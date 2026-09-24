@@ -53,6 +53,29 @@ public class empresa{
         return -1;
     }
 
+//REGISTRAR DESARROllADOR
+    public boolean agregarDesarrollador(String codigo, String equipoTrabajo, String nivel,
+                              int maxProyectosSimultaneos, double tarifaPorDia, String estado){
+    Desarrolador nuevoDesarrollador= new Desarrolador(codigo,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
+    if (encontrarIndexDesarrollador(nuevoDesarrollador.getCodigo()) == -1) {
+        for (int i = 0; i < listDesarrolladores.length; i++) {
+            if (listDesarrolladores[i] == null) {
+                listDesarrolladores[i] = nuevoDesarrollador;
+                return true;
+            }
+        }
+    }
+    return false; // Ya existe o el arreglo está lleno
+}
+
+    public int encontrarIndexDesarrollador(String codigoBuscar) {
+        for (int i = 0; i < listDesarrolladores.length; i++) {
+            if (listDesarrolladores[i] != null && listDesarrolladores[i].getCodigo().equals(codigoBuscar)) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public String getNombreComercial() {
         return nombreComercial;
     }
