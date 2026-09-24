@@ -26,7 +26,7 @@ public class Main {
                 case 1:
                     registrarCliente();
                     break;
-<<<<<<< HEAD
+
 
                 case 2:
                     registrarDesarrolador();
@@ -35,10 +35,8 @@ public class Main {
 
 
 
-=======
-                case 2:
-                    agregarDesarrollador();
->>>>>>> 4ad2ea010b573c14a0377942a87524ba227a8899
+
+
 
                 case 0:
                     JOptionPane.showMessageDialog(null, "El programa finalizo");
@@ -94,25 +92,5 @@ public class Main {
 
     }
 
-<<<<<<< HEAD
-=======
-    //REGISTRAR LA INFORMACIÓN DEL DESARROLADOR
-    private static void agregarDesarrollador() {
-        String codigo = JOptionPane.showInputDialog("Ingrese el codigo de desarrollador: ");
-        String equipoTrabajo = JOptionPane.showInputDialog("ingrese el equipo de trabajo: ");
-        String nivel = JOptionPane.showInputDialog("Ingrese el nivel: ");
-        int maxProyectosSimultaneos =Integer.parseInt(JOptionPane.showInputDialog("ingrese el maximo de proyectos simultaneos: "));
-        double tarifaPorDia = Double.parseDouble(JOptionPane.showInputDialog("ingrese pais de procedencia del cliente"));
-        String estado = JOptionPane.showInputDialog("ingrese el estado: ");
 
-        boolean resultado = miEmpresa.agregarDesarrollador(codigo,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
-        if (resultado) {
-            JOptionPane.showMessageDialog(null,"registro exitoso");
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "no se hizo el registro");
-        }
-    }
 
-}
->>>>>>> 4ad2ea010b573c14a0377942a87524ba227a8899
