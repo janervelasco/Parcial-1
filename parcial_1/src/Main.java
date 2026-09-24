@@ -36,6 +36,10 @@ public class Main {
                     registrarProyecto();
                     break;
 
+                case 4:
+                    registrarServicioAdicional();
+                    break;
+
 
 
 
@@ -114,6 +118,21 @@ public class Main {
         }
     }
 
+    //REGISTRAR SERVICIO ADICIONAL
+    private static void registrarServicioAdicional(){
+        String codigo = JOptionPane.showInputDialog("ingrese el codigo del servicioAdicional");
+        String nombre = JOptionPane.showInputDialog("ingrese el nombre");
+        String descripcion = JOptionPane.showInputDialog("descripción");
+        double precio = Double.parseDouble(JOptionPane.showInputDialog("ingrese el precio"));
+        boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog("ingrese la disponibilidad"));
+
+        Boolean resultado = miEmpresa.agregarServicioAdicional(codigo,nombre,descripcion,precio,disponible);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "registro exitoso");
+        } else {
+            JOptionPane.showMessageDialog(null, "no se hizo el registro");
+        }
+    }
 
 }
 

@@ -27,6 +27,8 @@ public class empresa{
         listServiciioAdcional = new servicioAdicional[10];
     }
 
+
+
     // REGISTRAR CLIENTE
     public boolean agregarCliente(String documento, String nombreCompleto, String telefono,
                                   String email, String pais){
@@ -80,6 +82,7 @@ public class empresa{
     }
 
 
+
     //REGISTRAR PROYECTO
     public boolean agregarProyecto(String codigo, String fechaSolicitud, String fechaInicio,String fechaEntrega,String estado,
                                    String metodoPago,double valorTotal){
@@ -99,6 +102,33 @@ public class empresa{
     public int encontrarIndexProyecto(String codigoBuscar) {
         for (int i = 0; i < listProyectos.length; i++) {
             if (listProyectos[i] != null && listProyectos[i].getCodigo().equals(codigoBuscar)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+
+    //REGISTRAR SERVICIO ADICIONAL
+    public boolean agregarServicioAdicional(String codigo,String nombre,String descripcion,double precio,boolean disponible){
+
+        servicioAdicional nuevoServicioAdicional= new servicioAdicional(codigo,nombre, descripcion,precio,disponible);
+        if (encontrarIndexServicioAdicional(nuevoServicioAdicional.getCodigo()) == -1) {
+            for (int i = 0; i < listServiciioAdcional.length; i++) {
+                if (listServiciioAdcional[i] == null) {
+                    listServiciioAdcional[i] = nuevoServicioAdicional;
+                    return true;
+                }
+            }
+        }
+        return false; // Ya existe o el arreglo está lleno
+    }
+
+    //ENCONTRAR INDEX SERVICIO ADICIONAL
+    public int encontrarIndexServicioAdicional(String codigoBuscar) {
+        for (int i = 0; i < listServiciioAdcional.length; i++) {
+            if (listServiciioAdcional[i] != null && listServiciioAdcional[i].getCodigo().equals(codigoBuscar)) {
                 return i;
             }
         }
