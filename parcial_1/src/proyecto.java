@@ -18,7 +18,7 @@ public class proyecto() {
         this.codigo = codigo;
         this.fechaSolicitud = fechaSolicitud:
         this.fechaInicio = fechaInicio;
-        this.fechaEntrega = fechaENtrega;
+        this.fechaEntrega = fechaEntrega;
         this.estado = estado;
         this.metodoPago = metodoPago;
         this.valorTotal = valorTotal;
