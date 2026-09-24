@@ -27,7 +27,7 @@ public class empresa{
         listServiciioAdcional = new servicioAdicional[10];
     }
 
-
+//--------------------------------------------------------------------------------------------------------
 
     // REGISTRAR CLIENTE
     public boolean agregarCliente(String documento, String nombreCompleto, String telefono,
@@ -70,8 +70,24 @@ public class empresa{
         return respuesta;
     }
 
+    //ACTUALIZAR INFORMACIÓN DEL CLIENTE
+    public boolean actualizarCliente(String documentoClienteActualizar,String nombre,String telefono,String email,String pais) {
+        boolean respuesta = false;
+        int index = encontrarIndexCliente(documentoClienteActualizar);
 
+        if (index != -1) {
+            listClientes[index].setNombreCompleto(nombre);
+            listClientes[index].setTelefono(telefono);
+            listClientes[index].setEmail(email);
+            listClientes[index].setPaisProcedencia(pais);
 
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
+
+//--------------------------------------------------------------------------------------------------------
     //REGISTRAR DESARROllADOR
     public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel,
                               int maxProyectosSimultaneos, double tarifaPorDia, String estado){
@@ -114,7 +130,24 @@ public class empresa{
         return respuesta;
     }
 
+    //ACTUALIZAR INFORMACIÓN DEL DESARROLLADOR
+    public boolean actualizarDesarrollador(String codigoDesarrolladorActualizar,String equipoTrabajo,String nivel,int maxProyectos,double tarifaPorDia,String estado) {
+        boolean respuesta = false;
+        int index = encontrarIndexDesarrollador(codigoDesarrolladorActualizar);
 
+        if (index != -1) {
+            listDesarrolladores[index].setEquipoTrabajo(equipoTrabajo);
+            listDesarrolladores[index].setNivel(nivel);
+            listDesarrolladores[index].setMaxProyectosSimultaneos(maxProyectos);
+            listDesarrolladores[index].setTarifaPorDia(tarifaPorDia);
+            listDesarrolladores[index].setEstado(estado);
+
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
+//--------------------------------------------------------------------------------------------------------
 
     //REGISTRAR PROYECTO
     public boolean agregarProyecto(String codigo, String fechaSolicitud, String fechaInicio,String fechaEntrega,String estado,
@@ -160,6 +193,10 @@ public class empresa{
 
         return respuesta;
     }
+<<<<<<< HEAD
+=======
+//--------------------------------------------------------------------------------------------------------
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
 
 
     //REGISTRAR SERVICIO ADICIONAL
@@ -186,6 +223,10 @@ public class empresa{
         }
         return -1;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
     //ACTUALIZAR INFORMACIÓN DEL PROYECTO
     public boolean actualizarServicioAdicional(String codigoActualizar,String nombre,String descripcion,double precio,boolean disponible) {
         boolean respuesta = false;
@@ -202,6 +243,12 @@ public class empresa{
 
         return respuesta;
     }
+<<<<<<< HEAD
+=======
+
+    //--------------------------------------------------------------------------------------------------------
+
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
     // CALCULAR INGRESOS TOTALES
     public double calcularIngresosTotales() {
         double ingresosTotales = 0;
@@ -222,6 +269,9 @@ public class empresa{
 
         return ingresosTotales;
     }
+
+    //--------------------------------------------------------------------------------------------------------
+
     public boolean asignarProyectoACliente(String documento, String codigoProyecto) {
         cliente clienteEncontrado = null;
         proyecto proyectoEncontrado = null;
