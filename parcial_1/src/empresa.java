@@ -53,6 +53,22 @@ public class empresa{
         }
         return -1;
     }
+    //ACTUALIZAR INFORMACIÓN DEL CLIENTE
+    public boolean actualizarCliente(String documentoClienteActualizar,String nombre,String telefono,String email,String pais) {
+        boolean respuesta = false;
+        int index = encontrarIndexCliente(documentoClienteActualizar);
+
+        if (index != -1) {
+            listClientes[index].setNombreCompleto(nombre);
+            listClientes[index].setTelefono(telefono);
+            listClientes[index].setEmail(email);
+            listClientes[index].setPaisProcedencia(pais);
+
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
 
     //ACTUALIZAR INFORMACIÓN DEL CLIENTE
     public boolean actualizarCliente(String documentoClienteActualizar,String nombre,String telefono,String email,String pais) {
@@ -95,6 +111,23 @@ public class empresa{
             }
         }
         return -1;
+    }
+    //ACTUALIZAR INFORMACIÓN DEL DESARROLLADOR
+    public boolean actualizarDesarrollador(String codigoDesarrolladorActualizar,String equipoTrabajo,String nivel,int maxProyectos,double tarifaPorDia,String estado) {
+        boolean respuesta = false;
+        int index = encontrarIndexDesarrollador(codigoDesarrolladorActualizar);
+
+        if (index != -1) {
+            listDesarrolladores[index].setEquipoTrabajo(equipoTrabajo);
+            listDesarrolladores[index].setNivel(nivel);
+            listDesarrolladores[index].setMaxProyectosSimultaneos(maxProyectos);
+            listDesarrolladores[index].setTarifaPorDia(tarifaPorDia);
+            listDesarrolladores[index].setEstado(estado);
+
+            respuesta = true;
+        }
+
+        return respuesta;
     }
 
     //ACTUALIZAR INFORMACIÓN DEL DESARROLLADOR
@@ -160,7 +193,10 @@ public class empresa{
 
         return respuesta;
     }
+<<<<<<< HEAD
+=======
 //--------------------------------------------------------------------------------------------------------
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
 
 
     //REGISTRAR SERVICIO ADICIONAL
@@ -187,7 +223,10 @@ public class empresa{
         }
         return -1;
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
     //ACTUALIZAR INFORMACIÓN DEL PROYECTO
     public boolean actualizarServicioAdicional(String codigoActualizar,String nombre,String descripcion,double precio,boolean disponible) {
         boolean respuesta = false;
@@ -204,9 +243,12 @@ public class empresa{
 
         return respuesta;
     }
+<<<<<<< HEAD
+=======
 
     //--------------------------------------------------------------------------------------------------------
 
+>>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
     // CALCULAR INGRESOS TOTALES
     public double calcularIngresosTotales() {
         double ingresosTotales = 0;
@@ -238,7 +280,6 @@ public class empresa{
         for (int i = 0; i < listClientes.length; i++) {
             if (listClientes[i] != null && listClientes[i].getDocumento().equals(documento)) {
                 clienteEncontrado = listClientes[i];
-                break;
             }
         }
 
@@ -246,7 +287,6 @@ public class empresa{
         for (int i = 0; i < listProyectos.length; i++) {
             if (listProyectos[i] != null && listProyectos[i].getCodigo().equals(codigoProyecto)) {
                 proyectoEncontrado = listProyectos[i];
-                break;
             }
         }
 
@@ -257,9 +297,12 @@ public class empresa{
 
         return false; // Retorna falso si no encontró al cliente o al proyecto
     }
+<<<<<<< HEAD
     //lista de proyectos
+=======
+>>>>>>> b4524ebe14aa4e5f24af96369d7182da394ac856
     public String listarProyectos() {
-        String reporte = "--- LISTA DE PROYECTOS ---\n";
+        String reporte = " LISTA DE PROYECTOS \n";
         boolean hayProyectos = false;
 
         for (int i = 0; i < listProyectos.length; i++) {
@@ -321,6 +364,49 @@ public class empresa{
 
         return resultado;
     }
+    public String validarNumeroPerfecto(String telefonoBuscado) {
+        cliente clienteEncontrado = null;
+
+        // 1. Buscamos el cliente por su número de teléfono
+        for (int i = 0; i < listClientes.length; i++) {
+            if (listClientes[i] != null && listClientes[i].getTelefono().equals(telefonoBuscado)) {
+                clienteEncontrado = listClientes[i];
+            }
+        }
+
+        if (clienteEncontrado == null) {
+            return "Error: No se encontró ningún cliente registrado con el teléfono " + telefonoBuscado;
+        }
+
+        // 2. Convertir el texto del teléfono a un número entero normal
+        int numeroTelefono = Integer.parseInt(telefonoBuscado);
+
+        if (numeroTelefono <= 0) {
+            return "El número de teléfono debe ser mayor a cero.";
+        }
+
+        // 3. Sumar los divisores propios
+        int sumaDivisores = 0;
+        for (int i = 1; i <= numeroTelefono / 2; i++) {
+            if (numeroTelefono % i == 0) {
+                sumaDivisores = sumaDivisores + i;
+            }
+        }
+
+        // 4. Armar el resultado
+        String resultado = "VALIDACIÓN DE NÚMERO PERFECTO\n";
+        resultado = resultado + "Cliente: " + clienteEncontrado.getNombreCompleto() + "\n";
+        resultado = resultado + "Teléfono evaluado: " + numeroTelefono + "\n";
+
+        if (sumaDivisores == numeroTelefono) {
+            resultado = resultado + "El número de teléfono es un número perfecto (Suma: " + sumaDivisores + ")";
+        } else {
+            resultado = resultado + "El número de teléfono no es un número perfecto. (Suma: " + sumaDivisores + ")";
+        }
+
+        return resultado;
+    }
+
     // GETTERS Y SETTERS
 
     public String getNombreComercial() {
