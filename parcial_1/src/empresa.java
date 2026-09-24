@@ -53,18 +53,41 @@ public class empresa{
     }
 
 
-    // REGISTRAR DESARROLLADOR
-    public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel, int maxProyectosSimultaneos,
-                                       double tarifaPorDia, String estado) {
 
-        // 1. Validamos si ya existe el desarrollador por su código
-        if (encontrarIndexDesarrollador(codigo) == -1) {
-            Desarrolador nuevoDesarrolador = new Desarrolador(codigo, equipoTrabajo, nivel, maxProyectosSimultaneos, tarifaPorDia, estado);
+    //REGISTRAR DESARROllADOR
+    public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel,
+                              int maxProyectosSimultaneos, double tarifaPorDia, String estado){
+        Desarrolador nuevoDesarrollador= new Desarrolador(codigo,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
+        if (encontrarIndexDesarrollador(nuevoDesarrollador.getCodigo()) == -1) {
+               for (int i = 0; i < listDesarrolladores.length; i++) {
+                    if (listDesarrolladores[i] == null) {
+                        listDesarrolladores[i] = nuevoDesarrollador;
+                     return true;
+                    }
+               }
+        }
+         return false; // Ya existe o el arreglo está lleno
+    }
 
-            // 2. Buscamos espacio en el arreglo de desarrolladores
-            for (int i = 0; i < listDesarrolladores.length; i++) {
-                if (listDesarrolladores[i] == null) {
-                    listDesarrolladores[i] = nuevoDesarrolador; // Corregido aquí para usar tu variable
+    //ENCONTRAR INDEX DESARROLLADOR
+    public int encontrarIndexDesarrollador(String codigoBuscar) {
+        for (int i = 0; i < listDesarrolladores.length; i++) {
+            if (listDesarrolladores[i] != null && listDesarrolladores[i].getCodigo().equals(codigoBuscar)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    //REGISTRAR PROYECTO
+    public boolean agregarProyecto(String codigo, String fechaSolicitud, String fechaInicio,String fechaEntrega,String estado,
+                                   String metodoPago,double valorTotal){
+        proyecto nuevoProyecto= new proyecto(codigo,fechaSolicitud,fechaInicio,fechaEntrega,estado,metodoPago,valorTotal);
+        if (encontrarIndexProyecto(nuevoProyecto.getCodigo()) == -1) {
+            for (int i = 0; i < listProyectos.length; i++) {
+                if (listProyectos[i] == null) {
+                    listProyectos[i] = nuevoProyecto;
                     return true;
                 }
             }
@@ -72,26 +95,10 @@ public class empresa{
         return false; // Ya existe o el arreglo está lleno
     }
 
-    // ENCONTRAR INDEX DESARROLLADOR
-
-//REGISTRAR DESARROllADOR
-    public boolean agregarDesarrollador(String codigo, String equipoTrabajo, String nivel,
-                              int maxProyectosSimultaneos, double tarifaPorDia, String estado){
-    Desarrolador nuevoDesarrollador= new Desarrolador(codigo,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
-    if (encontrarIndexDesarrollador(nuevoDesarrollador.getCodigo()) == -1) {
-        for (int i = 0; i < listDesarrolladores.length; i++) {
-            if (listDesarrolladores[i] == null) {
-                listDesarrolladores[i] = nuevoDesarrollador;
-                return true;
-            }
-        }
-    }
-    return false; // Ya existe o el arreglo está lleno
-}
-
-    public int encontrarIndexDesarrollador(String codigoBuscar) {
-        for (int i = 0; i < listDesarrolladores.length; i++) {
-            if (listDesarrolladores[i] != null && listDesarrolladores[i].getCodigo().equals(codigoBuscar)) {
+    //ENCONTRAR INDEX PROYECTO
+    public int encontrarIndexProyecto(String codigoBuscar) {
+        for (int i = 0; i < listProyectos.length; i++) {
+            if (listProyectos[i] != null && listProyectos[i].getCodigo().equals(codigoBuscar)) {
                 return i;
             }
         }

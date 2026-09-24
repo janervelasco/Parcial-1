@@ -32,6 +32,10 @@ public class Main {
                     registrarDesarrolador();
                      break;
 
+                case 3:
+                    registrarProyecto();
+                    break;
+
 
 
 
@@ -70,6 +74,8 @@ public class Main {
             JOptionPane.showMessageDialog(null, "no se hizo el registro");
        }
     }
+
+    //REGISTRAR LA INFORMACIÓN DEL DESARROLLADOR
     private static void registrarDesarrolador(){
         String codigo = JOptionPane.showInputDialog("ingrese el codigo de desarrolador");
         String equipoTrabajo = JOptionPane.showInputDialog("ingrese su equipo de trabajo");
@@ -89,8 +95,27 @@ public class Main {
         }
     }
 
+    //REGISTRAR LA INFORMACIÓN DEL PROYECTO
+    private static void registrarProyecto(){
+        String codigo = JOptionPane.showInputDialog("ingrese el codigo de proyecto");
+        String fechaSolicitud = JOptionPane.showInputDialog("ingrese la fecha de solicitud");
+        String fechaInicio = JOptionPane.showInputDialog("ingrese la fecha de inicio");
+        String fechaEntrega = JOptionPane.showInputDialog("ingrese la fecha de entrega");
+        String estado = JOptionPane.showInputDialog("ingrese el estado");
+        String metodoPago= JOptionPane.showInputDialog("ingrrese el metodo de pago");
+        double valorTotal = Double.parseDouble(JOptionPane.showInputDialog("ingrese el valor total"));
 
+        Boolean resultado = miEmpresa.agregarProyecto(codigo,fechaSolicitud,fechaInicio,fechaEntrega,estado,
+                metodoPago,valorTotal);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "registro exitoso");
+        } else {
+            JOptionPane.showMessageDialog(null, "no se hizo el registro");
+        }
     }
+
+
+}
 
 
 
