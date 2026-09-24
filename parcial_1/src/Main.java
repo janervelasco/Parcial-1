@@ -4,9 +4,10 @@ import static java.lang.Double.parseDouble;
 
 public class Main {
     private static empresa miEmpresa;
+
     public static void main(String[] args) {
 
-         miEmpresa = new empresa("DevPlus S.A.S", "900123456", "Calle 10", "1234567", "www.devplus.com");
+        miEmpresa = new empresa("DevPlus S.A.S", "900123456", "Calle 10", "1234567", "www.devplus.com");
 
         int option = 0;
         do {
@@ -20,7 +21,7 @@ public class Main {
                     "\n 6. asignar proyecto a cliente" +
                     "\n 7. lista de proyectos" +
                     "\n 8. Actualizar información" +
-                    "\n 9. lista de proyectos" +
+                    "\n 9. validar numero perfecto" +
                     "\n 10. lista de proyectos" +
                     "\n 0. Salir del sistema"));
 
@@ -35,7 +36,7 @@ public class Main {
 
                 case 2:
                     registrarDesarrolador();
-                     break;
+                    break;
 
                 case 3:
                     registrarProyecto();
@@ -54,16 +55,16 @@ public class Main {
                     listarProyectosMain();
                     break;
                 case 8:
-                    int option1 =0;
-                    do{
-                        option1  = Integer.parseInt(JOptionPane.showInputDialog("para actualizar información"+
-                                "\nseleccione una opción:"+
+                    int option1 = 0;
+                    do {
+                        option1 = Integer.parseInt(JOptionPane.showInputDialog("para actualizar información" +
+                                "\nseleccione una opción:" +
                                 "\n 1. Actualizar información del cliente." +
                                 "\n 2. Actualizar información del desarrollador." +
                                 "\n 3. Actualizar información del proyecto." +
                                 "\n 4. Actualizar información del servicio adicional." +
                                 "\n 0. Salir del sistema"));
-                        switch (option1){
+                        switch (option1) {
                             case 1:
                                 actualizarInformacionCliente();
                                 break;
@@ -84,16 +85,11 @@ public class Main {
                                 break;
 
                         }
-                    }while (option != 0);
+                    } while (option != 0);
                     break;
-
-
-
-
-
-
-
-
+                case 9:
+                    validarNumeroPerfectoMain();
+                    break;
 
 
                 case 0:
@@ -123,11 +119,10 @@ public class Main {
         boolean resultado = miEmpresa.agregarCliente(documento, nombreCompleto, telefono, email,
                 pais);
         if (resultado) {
-            JOptionPane.showMessageDialog(null,"registro exitoso");
-        }
-        else {
+            JOptionPane.showMessageDialog(null, "registro exitoso");
+        } else {
             JOptionPane.showMessageDialog(null, "no se hizo el registro");
-       }
+        }
     }
 
     //Actualizar información del cliente
@@ -139,11 +134,11 @@ public class Main {
         String email = JOptionPane.showInputDialog("Ingrese el email: ");
         String pais = JOptionPane.showInputDialog("Ingrese el pais de procedencia: ");
 
-        boolean resultadoActualizacion = miEmpresa.actualizarCliente(documentoClienteActualizar,nombre,telefono,email,pais);
+        boolean resultadoActualizacion = miEmpresa.actualizarCliente(documentoClienteActualizar, nombre, telefono, email, pais);
 
-        if(resultadoActualizacion){
+        if (resultadoActualizacion) {
             JOptionPane.showMessageDialog(null, "Se modifico el cliente.");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "NO se pudo modificar el cliente.");
         }
     }
@@ -151,7 +146,7 @@ public class Main {
     //-------------------------------------------------------------------------------------------
 
     //REGISTRAR LA INFORMACIÓN DEL DESARROLLADOR
-    private static void registrarDesarrolador(){
+    private static void registrarDesarrolador() {
         String codigo = JOptionPane.showInputDialog("ingrese el codigo de desarrolador");
         String equipoTrabajo = JOptionPane.showInputDialog("ingrese su equipo de trabajo");
         String nivel = JOptionPane.showInputDialog("ingrese el nivel del desarrolador");
@@ -180,31 +175,30 @@ public class Main {
         double tarifaPorDia = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el pais de procedencia: "));
         String estado = JOptionPane.showInputDialog("ingrese el estado: ");
 
-        boolean resultadoActualizacion = miEmpresa.actualizarDesarrollador(codigoDesarrolladorActualizar,equipoTrabajo,nivel,maxProyectosSimultaneos,tarifaPorDia,estado);
+        boolean resultadoActualizacion = miEmpresa.actualizarDesarrollador(codigoDesarrolladorActualizar, equipoTrabajo, nivel, maxProyectosSimultaneos, tarifaPorDia, estado);
 
-        if(resultadoActualizacion){
+        if (resultadoActualizacion) {
             JOptionPane.showMessageDialog(null, "Se modifico el desarrollador.");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "NO se pudo modificar el desarrollador.");
         }
     }
 
 
-
     //-------------------------------------------------------------------------------------------
 
     //REGISTRAR LA INFORMACIÓN DEL PROYECTO
-    private static void registrarProyecto(){
+    private static void registrarProyecto() {
         String codigo = JOptionPane.showInputDialog("ingrese el codigo de proyecto");
         String fechaSolicitud = JOptionPane.showInputDialog("ingrese la fecha de solicitud");
         String fechaInicio = JOptionPane.showInputDialog("ingrese la fecha de inicio");
         String fechaEntrega = JOptionPane.showInputDialog("ingrese la fecha de entrega");
         String estado = JOptionPane.showInputDialog("ingrese el estado");
-        String metodoPago= JOptionPane.showInputDialog("ingrrese el metodo de pago");
+        String metodoPago = JOptionPane.showInputDialog("ingrrese el metodo de pago");
         double valorTotal = Double.parseDouble(JOptionPane.showInputDialog("ingrese el valor total"));
 
-        Boolean resultado = miEmpresa.agregarProyecto(codigo,fechaSolicitud,fechaInicio,fechaEntrega,estado,
-                metodoPago,valorTotal);
+        Boolean resultado = miEmpresa.agregarProyecto(codigo, fechaSolicitud, fechaInicio, fechaEntrega, estado,
+                metodoPago, valorTotal);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "registro exitoso");
         } else {
@@ -220,15 +214,15 @@ public class Main {
         String fechaInicio = JOptionPane.showInputDialog("ingrese la fecha de inicio");
         String fechaEntrega = JOptionPane.showInputDialog("ingrese la fecha de entrega");
         String estado = JOptionPane.showInputDialog("ingrese el estado");
-        String metodoPago= JOptionPane.showInputDialog("ingrrese el metodo de pago");
+        String metodoPago = JOptionPane.showInputDialog("ingrrese el metodo de pago");
         double valorTotal = Double.parseDouble(JOptionPane.showInputDialog("ingrese el valor total"));
 
-        boolean resultadoActualizacion = miEmpresa.actualizarProyecto(codigoActualizar,fechaSolicitud,fechaInicio,fechaEntrega,estado,
-                metodoPago,valorTotal);
+        boolean resultadoActualizacion = miEmpresa.actualizarProyecto(codigoActualizar, fechaSolicitud, fechaInicio, fechaEntrega, estado,
+                metodoPago, valorTotal);
 
-        if(resultadoActualizacion){
+        if (resultadoActualizacion) {
             JOptionPane.showMessageDialog(null, "Se modifico el proyecto.");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "NO se pudo modificar el proyecto.");
         }
     }
@@ -236,14 +230,14 @@ public class Main {
     //-------------------------------------------------------------------------------------------------------------------------
 
     //REGISTRAR SERVICIO ADICIONAL
-    private static void registrarServicioAdicional(){
+    private static void registrarServicioAdicional() {
         String codigo = JOptionPane.showInputDialog("ingrese el codigo del servicioAdicional");
         String nombre = JOptionPane.showInputDialog("ingrese el nombre");
         String descripcion = JOptionPane.showInputDialog("descripción");
         double precio = Double.parseDouble(JOptionPane.showInputDialog("ingrese el precio"));
         boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog("ingrese la disponibilidad"));
 
-        Boolean resultado = miEmpresa.agregarServicioAdicional(codigo,nombre,descripcion,precio,disponible);
+        Boolean resultado = miEmpresa.agregarServicioAdicional(codigo, nombre, descripcion, precio, disponible);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "registro exitoso");
         } else {
@@ -260,11 +254,11 @@ public class Main {
         double precio = Double.parseDouble(JOptionPane.showInputDialog("ingrese el precio: "));
         boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog("ingrese la disponibilidad: "));
 
-        boolean resultadoActualizacion = miEmpresa.actualizarServicioAdicional(codigoActualizar,nombre,descripcion,precio,disponible);
+        boolean resultadoActualizacion = miEmpresa.actualizarServicioAdicional(codigoActualizar, nombre, descripcion, precio, disponible);
 
-        if(resultadoActualizacion){
+        if (resultadoActualizacion) {
             JOptionPane.showMessageDialog(null, "Se modifico el servicio adicional.");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "NO se pudo modificar el servicio adicional.");
         }
     }
@@ -274,6 +268,7 @@ public class Main {
         double total = miEmpresa.calcularIngresosTotales();
         JOptionPane.showMessageDialog(null, "Los ingresos totales de la empresa son: " + total);
     }
+
     private static void asignarProyectoCliente() {
         String documento = JOptionPane.showInputDialog(null, "Ingrese el documento del cliente:");
         if (documento == null) return;
@@ -288,9 +283,19 @@ public class Main {
             JOptionPane.showMessageDialog(null, "Error: No se encontró el cliente o el proyecto, o ya está asignado.");
         }
     }
+
     private static void listarProyectosMain() {
         String resultado = miEmpresa.listarProyectos();
         JOptionPane.showMessageDialog(null, resultado);
+
+    }
+
+    private static void validarNumeroPerfectoMain() {
+        String telefono = JOptionPane.showInputDialog(null, "Ingrese el número de teléfono del cliente a consultar:");
+        if (telefono == null) return;
+
+        String mensaje = miEmpresa.validarNumeroPerfecto(telefono);
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 }
 

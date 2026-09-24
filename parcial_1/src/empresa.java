@@ -257,7 +257,7 @@ public class empresa{
 
         return false; // Retorna falso si no encontró al cliente o al proyecto
     }
-
+    //lista de proyectos
     public String listarProyectos() {
         String reporte = "--- LISTA DE PROYECTOS ---\n";
         boolean hayProyectos = false;
@@ -275,6 +275,51 @@ public class empresa{
             return "No hay proyectos registrados todavía.";
         }
         return reporte;
+
+    }
+
+    //Validar numero perfecto
+    public String validarNumeroPerfecto(String telefonoBuscado) {
+        cliente clienteEncontrado = null;
+
+        // 1. Buscamos el cliente por su número de teléfono
+        for (int i = 0; i < listClientes.length; i++) {
+            if (listClientes[i] != null && listClientes[i].getTelefono().equals(telefonoBuscado)) {
+                clienteEncontrado = listClientes[i];
+            }
+        }
+
+        if (clienteEncontrado == null) {
+            return "Error: No se encontró ningún cliente registrado con el teléfono " + telefonoBuscado;
+        }
+
+        // 2. Convertir el texto del teléfono a un número entero normal
+        int numeroTelefono = Integer.parseInt(telefonoBuscado);
+
+        if (numeroTelefono <= 0) {
+            return "El número de teléfono debe ser mayor a cero.";
+        }
+
+        // 3. Sumar los divisores propios
+        int sumaDivisores = 0;
+        for (int i = 1; i <= numeroTelefono / 2; i++) {
+            if (numeroTelefono % i == 0) {
+                sumaDivisores = sumaDivisores + i;
+            }
+        }
+
+        // 4. Armar el resultado
+        String resultado = "VALIDACIÓN DE NÚMERO PERFECTO\n";
+        resultado = resultado + "Cliente: " + clienteEncontrado.getNombreCompleto() + "\n";
+        resultado = resultado + "Teléfono evaluado: " + numeroTelefono + "\n";
+
+        if (sumaDivisores == numeroTelefono) {
+            resultado = resultado + "El número de teléfono es un número perfecto (Suma: " + sumaDivisores + ")";
+        } else {
+            resultado = resultado + "El número de teléfono no es un número perfecto. (Suma: " + sumaDivisores + ")";
+        }
+
+        return resultado;
     }
     // GETTERS Y SETTERS
 
