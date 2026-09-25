@@ -1,6 +1,9 @@
 import javax.swing.*;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 public class Main {
     private static empresa miEmpresa;
 
@@ -27,7 +30,6 @@ public class Main {
                     "\n 10. Eliminar información." +
                     "\n 11. Total cliente (Factura)" +
                     "\n 0. Salir del sistema"));
-
 
             switch (option) {
                 case 1:
@@ -129,14 +131,16 @@ public class Main {
                     break;
             }
 
-
         } while (option != 0);
     }
 
 
     //-------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void registrarCliente() {
         String documento = JOptionPane.showInputDialog("Ingrese el documento: ");
         String nombreCompleto = JOptionPane.showInputDialog("Ingrese el nombre completo: ");
@@ -144,7 +148,10 @@ public class Main {
         String email = JOptionPane.showInputDialog("Ingrese su email del cliente");
         String pais = JOptionPane.showInputDialog("Ingrese país de procedencia del cliente");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         boolean resultado = miEmpresa.agregarCliente(documento, nombreCompleto, telefono, email, pais);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Registro exitoso");
@@ -153,14 +160,20 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void actualizarInformacionCliente() {
         String documentoClienteActualizar = JOptionPane.showInputDialog("Ingrese el documento del cliente que quiere actualizar: ");
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre completo del cliente: ");
         String telefono = JOptionPane.showInputDialog("Ingrese el teléfono: ");
         String email = JOptionPane.showInputDialog("Ingrese el email: ");
         String pais = JOptionPane.showInputDialog("Ingrese el país de procedencia: ");
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         boolean resultadoActualizacion = miEmpresa.actualizarCliente(documentoClienteActualizar, nombre, telefono, email, pais);
 
@@ -172,6 +185,7 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
     private static void eliminarInformacionCliente() {
         String documentoclienteEliminar = JOptionPane.showInputDialog("Ingrese el documento del cliente que quiere eliminar: ");
@@ -180,6 +194,13 @@ public class Main {
         boolean respuestaEliminar = miEmpresa.eliminarCliente(documentoclienteEliminar);
 
 
+=======
+    private static void eliminarInformacionCliente() {
+        String documentoclienteEliminar = JOptionPane.showInputDialog("Ingrese el documento del cliente que quiere eliminar: ");
+
+        boolean respuestaEliminar = miEmpresa.eliminarCliente(documentoclienteEliminar);
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (respuestaEliminar) {
             JOptionPane.showMessageDialog(null, "Se eliminó el cliente.");
         } else {
@@ -187,15 +208,21 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
     //-------------------------------------------------------------------------------------------
 
 
+=======
+    //-------------------------------------------------------------------------------------------
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void registrarDesarrolador() {
         String codigo = JOptionPane.showInputDialog("Ingrese el código de desarrollador");
         String equipoTrabajo = JOptionPane.showInputDialog("Ingrese su equipo de trabajo");
         String nivel = JOptionPane.showInputDialog("Ingrese el nivel del desarrollador");
 
+<<<<<<< HEAD
 
         int maxProyectosSimultaneos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad máxima de proyectos"));
         double tarifaPorDia = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la tarifa por día"));
@@ -204,6 +231,13 @@ public class Main {
         String estado = JOptionPane.showInputDialog("Ingrese su estado");
 
 
+=======
+        int maxProyectosSimultaneos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad máxima de proyectos"));
+        double tarifaPorDia = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la tarifa por día"));
+
+        String estado = JOptionPane.showInputDialog("Ingrese su estado");
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         Boolean resultado = miEmpresa.agregarDesarrolador(codigo, equipoTrabajo, nivel, maxProyectosSimultaneos, tarifaPorDia, estado);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Registro exitoso");
@@ -212,7 +246,10 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void actualizarInformacionDesarrollador() {
         String codigoDesarrolladorActualizar = JOptionPane.showInputDialog("Ingrese el código del desarrollador que quiere actualizar: ");
         String equipoTrabajo = JOptionPane.showInputDialog("Ingrese el equipo de trabajo: ");
@@ -220,7 +257,10 @@ public class Main {
         int maxProyectosSimultaneos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el máximo de proyectos simultáneos: "));
         double tarifaPorDia = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la tarifa por día: "));
         String estado = JOptionPane.showInputDialog("Ingrese el estado: ");
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         boolean resultadoActualizacion = miEmpresa.actualizarDesarrollador(codigoDesarrolladorActualizar, equipoTrabajo, nivel, maxProyectosSimultaneos, tarifaPorDia, estado);
 
@@ -232,7 +272,10 @@ public class Main {
         }
     }
 
+    private static void eliminarInformaciondesarrolladores() {
+        String codigoDesarrolladorEliminar = JOptionPane.showInputDialog("Ingrese el código del desarrollador que quiere eliminar: ");
 
+<<<<<<< HEAD
     private static void eliminarInformaciondesarrolladores() {
         String codigoDesarrolladorEliminar = JOptionPane.showInputDialog("Ingrese el código del desarrollador que quiere eliminar: ");
 
@@ -240,10 +283,15 @@ public class Main {
         boolean respuestaEliminar = miEmpresa.eliminarDesarrollador(codigoDesarrolladorEliminar);
 
 
+=======
+        boolean respuestaEliminar = miEmpresa.eliminarDesarrollador(codigoDesarrolladorEliminar);
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (respuestaEliminar) {
             JOptionPane.showMessageDialog(null, "Se eliminó el desarrollador.");
         } else {
             JOptionPane.showMessageDialog(null, "NO se pudo eliminar el desarrollador.");
+<<<<<<< HEAD
         }
     }
 
@@ -270,6 +318,30 @@ public class Main {
     }
 
 
+=======
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------
+
+    private static void registrarProyecto() {
+        String codigo = JOptionPane.showInputDialog("Ingrese el código de proyecto");
+        String fechaSolicitud = JOptionPane.showInputDialog("Ingrese la fecha de solicitud");
+        String fechaInicio = JOptionPane.showInputDialog("Ingrese la fecha de inicio");
+        String fechaEntrega = JOptionPane.showInputDialog("Ingrese la fecha de entrega");
+        String estado = JOptionPane.showInputDialog("Ingrese el estado");
+        String metodoPago = JOptionPane.showInputDialog("Ingrese el método de pago");
+        double valorTotal = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor total"));
+
+        Boolean resultado = miEmpresa.agregarProyecto(codigo, fechaSolicitud, fechaInicio, fechaEntrega, estado, metodoPago, valorTotal);
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Registro exitoso");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se hizo el registro");
+        }
+    }
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void actualizarInformacionProyecto() {
         String codigoActualizar = JOptionPane.showInputDialog("Ingrese el código de proyecto que quiere actualizar: ");
         String fechaSolicitud = JOptionPane.showInputDialog("Ingrese la fecha de solicitud");
@@ -279,9 +351,13 @@ public class Main {
         String metodoPago = JOptionPane.showInputDialog("Ingrese el método de pago");
         double valorTotal = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor total"));
 
+<<<<<<< HEAD
 
         boolean resultadoActualizacion = miEmpresa.actualizarProyecto(codigoActualizar, fechaSolicitud, fechaInicio, fechaEntrega, estado, metodoPago, valorTotal);
 
+=======
+        boolean resultadoActualizacion = miEmpresa.actualizarProyecto(codigoActualizar, fechaSolicitud, fechaInicio, fechaEntrega, estado, metodoPago, valorTotal);
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         if (resultadoActualizacion) {
             JOptionPane.showMessageDialog(null, "Se modificó el proyecto.");
@@ -290,6 +366,7 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
     private static void eliminarInformacionProyectos() {
         String codigoProyectoEliminar = JOptionPane.showInputDialog("Ingrese el código del proyecto que quiere eliminar: ");
@@ -309,13 +386,32 @@ public class Main {
     //-------------------------------------------------------------------------------------------
 
 
+=======
+    private static void eliminarInformacionProyectos() {
+        String codigoProyectoEliminar = JOptionPane.showInputDialog("Ingrese el código del proyecto que quiere eliminar: ");
+
+        boolean respuestaEliminar = miEmpresa.eliminarProyecto(codigoProyectoEliminar);
+
+        if (respuestaEliminar) {
+            JOptionPane.showMessageDialog(null, "Se eliminó el proyecto.");
+        } else {
+            JOptionPane.showMessageDialog(null, "NO se pudo eliminar el proyecto.");
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void registrarServicioAdicional() {
         String codigo = JOptionPane.showInputDialog("Ingrese el código del servicio adicional");
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre");
         String descripcion = JOptionPane.showInputDialog("Descripción");
         double precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio"));
         boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese la disponibilidad"));
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         Boolean resultado = miEmpresa.agregarServicioAdicional(codigo, nombre, descripcion, precio, disponible);
         if (resultado) {
@@ -325,14 +421,20 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void actualizarInformacionServicioAdicional() {
         String codigoActualizar = JOptionPane.showInputDialog("Ingrese el código del servicio adicional que quiere actualizar: ");
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
         String descripcion = JOptionPane.showInputDialog("Descripción: ");
         double precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio: "));
         boolean disponible = Boolean.parseBoolean(JOptionPane.showInputDialog("Ingrese la disponibilidad: "));
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         boolean resultadoActualizacion = miEmpresa.actualizarServicioAdicional(codigoActualizar, nombre, descripcion, precio, disponible);
 
@@ -344,6 +446,7 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
     private static void eliminarInformacionServicioAdicional() {
         String codigoServicioAdiconalEliminar = JOptionPane.showInputDialog("Ingrese el código del servicio adicional que quiere eliminar: ");
@@ -352,6 +455,13 @@ public class Main {
         boolean respuestaEliminar = miEmpresa.eliminarServicioAdicional(codigoServicioAdiconalEliminar);
 
 
+=======
+    private static void eliminarInformacionServicioAdicional() {
+        String codigoServicioAdiconalEliminar = JOptionPane.showInputDialog("Ingrese el código del servicio adicional que quiere eliminar: ");
+
+        boolean respuestaEliminar = miEmpresa.eliminarServicioAdicional(codigoServicioAdiconalEliminar);
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (respuestaEliminar) {
             JOptionPane.showMessageDialog(null, "Se eliminó el servicio adicional.");
         } else {
@@ -359,10 +469,15 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
 
     //-------------------------------------------------------------------------------------------
 
 
+=======
+    //-------------------------------------------------------------------------------------------
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void calcularIngresosTotales() {
         double total = miEmpresa.calcularIngresosTotales();
         JOptionPane.showMessageDialog(null, "Los ingresos totales de la empresa son: " + total);
@@ -396,19 +511,32 @@ public class Main {
     private static void validarNumeroPerfectoMain() {
         String telefono = JOptionPane.showInputDialog(null, "Ingrese el número de teléfono del cliente a consultar:");
         if (telefono == null) { return; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         String mensaje = miEmpresa.validarNumeroPerfecto(telefono);
         JOptionPane.showMessageDialog(null, mensaje);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     private static void totalClienteMain() {
         String documento = JOptionPane.showInputDialog(null, "Ingrese el documento del cliente para generar la factura/total:");
         if (documento == null) { return; }
 
+<<<<<<< HEAD
 
         String reporteFactura = miEmpresa.generarFacturaCliente(documento);
         JOptionPane.showMessageDialog(null, reporteFactura);
     }
 }
+=======
+        String reporteFactura = miEmpresa.generarFacturaCliente(documento);
+        JOptionPane.showMessageDialog(null, reporteFactura);
+    }
+}
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd

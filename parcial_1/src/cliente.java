@@ -22,15 +22,16 @@ public class cliente {
         listProyectos = new proyecto[10];
     }
 
-    public boolean agregarProyectoACliente(proyecto nuevoProyecto) {
+    public boolean asignarProyectoCliente(proyecto proyectoEncontrado) {
         for (int i = 0; i < listProyectos.length; i++) {
             if (listProyectos[i] == null) {
-                listProyectos[i] = nuevoProyecto;
+                listProyectos[i] = proyectoEncontrado;
                 return true;
             }
         }
         return false;
     }
+
 
     public String getDocumento() {
         return documento;
@@ -80,13 +81,4 @@ public class cliente {
         this.listProyectos = listProyectos;
     }
 
-    public boolean asignarProyectoCliente(proyecto proyectoEncontrado) {
-        for (int i = 0; i < listProyectos.length; i++) {
-            if (listProyectos[i] == null) {
-                listProyectos[i] = proyectoEncontrado;
-                return true;
-            }
-        }
-        return false;
-    }
 }

@@ -1,6 +1,9 @@
 import javax.swing.*;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 public class empresa {
     private String nombreComercial;
     private String nit;
@@ -82,7 +85,10 @@ public class empresa {
     public boolean eliminarCliente(String documento) {
         boolean respuesta = false;
         int index = encontrarIndexCliente(documento);
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         if(index != -1){
             listClientes[index] = null;
@@ -93,7 +99,10 @@ public class empresa {
         return respuesta;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     //--------------------------------------------------------------------------------------------------------
     //REGISTRAR DESARROLLADOR
     public boolean agregarDesarrolador(String codigo, String equipoTrabajo, String nivel,
@@ -144,7 +153,10 @@ public class empresa {
     public boolean eliminarDesarrollador(String codigo) {
         boolean respuesta = false;
         int index = encontrarIndexDesarrollador(codigo);
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
         if(index != -1){
             listDesarrolladores[index] = null;
@@ -155,7 +167,10 @@ public class empresa {
         return respuesta;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 //--------------------------------------------------------------------------------------------------------
 
 
@@ -212,6 +227,7 @@ public class empresa {
     public boolean eliminarProyecto(String codigo) {
         boolean respuesta = false;
         int index = encontrarIndexProyecto(codigo);
+<<<<<<< HEAD
 
 
         if(index != -1){
@@ -225,7 +241,18 @@ public class empresa {
 
 
 //--------------------------------------------------------------------------------------------------------
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
 
+        if(index != -1){
+            listProyectos[index] = null;
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
+
+//--------------------------------------------------------------------------------------------------------
 
     //REGISTRAR SERVICIO ADICIONAL
     public boolean agregarServicioAdicional(String codigo,String nombre,String descripcion,double precio,boolean disponible){
@@ -254,7 +281,10 @@ public class empresa {
         return -1;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     //ACTUALIZAR INFORMACIÓN DEL SERVICIO ADICIONAL
     public boolean actualizarServicioAdicional(String codigoActualizar,String nombre,String descripcion,double precio,boolean disponible) {
         boolean respuesta = false;
@@ -279,12 +309,16 @@ public class empresa {
         boolean respuesta = false;
         int index = encontrarIndexServicioAdicional(codigo);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if(index != -1){
             listServiciioAdcional[index] = null;
             respuesta = true;
         }
 
+<<<<<<< HEAD
 
         return respuesta;
     }
@@ -293,18 +327,31 @@ public class empresa {
     //--------------------------------------------------------------------------------------------------------
 
 
+=======
+        return respuesta;
+    }
+
+    //--------------------------------------------------------------------------------------------------------
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     // CALCULAR INGRESOS TOTALES
     public double calcularIngresosTotales() {
         double ingresosTotales = 0;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int i = 0; i < listProyectos.length; i++) {
             if (listProyectos[i] != null) {
                 ingresosTotales += listProyectos[i].getValorTotal();
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int j = 0; j < listServiciioAdcional.length; j++) {
             if (listServiciioAdcional[j] != null) {
                 ingresosTotales += listServiciioAdcional[j].getPrecio();
@@ -323,30 +370,45 @@ public class empresa {
         cliente clienteEncontrado = null;
         proyecto proyectoEncontrado = null;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int i = 0; i < listClientes.length; i++) {
             if (listClientes[i] != null && listClientes[i].getDocumento().equals(documento)) {
                 clienteEncontrado = listClientes[i];
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int i = 0; i < listProyectos.length; i++) {
             if (listProyectos[i] != null && listProyectos[i].getCodigo().equals(codigoProyecto)) {
                 proyectoEncontrado = listProyectos[i];
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (clienteEncontrado != null && proyectoEncontrado != null) {
             return clienteEncontrado.asignarProyectoCliente(proyectoEncontrado);
         }
 
+<<<<<<< HEAD
 
         return false;
     }
 
 
+=======
+        return false;
+    }
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     public String listarProyectos() {
         String reporte = " LISTA DE PROYECTOS \n";
         boolean hayProyectos = false;
@@ -368,12 +430,18 @@ public class empresa {
         return reporte;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
     // Validar número perfecto
     public String validarNumeroPerfecto(String telefonoBuscado) {
         cliente clienteEncontrado = null;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int i = 0; i < listClientes.length; i++) {
             if (listClientes[i] != null && listClientes[i].getTelefono().equals(telefonoBuscado)) {
                 clienteEncontrado = listClientes[i];
@@ -385,7 +453,10 @@ public class empresa {
             return "Error: No se encontró ningún cliente registrado con el teléfono " + telefonoBuscado;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         int numeroTelefono = Integer.parseInt(telefonoBuscado);
 
 
@@ -393,7 +464,10 @@ public class empresa {
             return "El número de teléfono debe ser mayor a cero.";
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         int sumaDivisores = 0;
         for (int i = 1; i <= numeroTelefono / 2; i++) {
             if (numeroTelefono % i == 0) {
@@ -401,7 +475,10 @@ public class empresa {
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         String resultado = "VALIDACIÓN DE NÚMERO PERFECTO\n";
         resultado = resultado + "Cliente: " + clienteEncontrado.getNombreCompleto() + "\n";
         resultado = resultado + "Teléfono evaluado: " + numeroTelefono + "\n";
@@ -417,11 +494,17 @@ public class empresa {
         return resultado;
     }
 
+<<<<<<< HEAD
 
     public String generarFacturaCliente(String documentoBuscado) {
         cliente clienteEncontrado = null;
 
 
+=======
+    public String generarFacturaCliente(String documentoBuscado) {
+        cliente clienteEncontrado = null;
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         for (int i = 0; i < listClientes.length; i++) {
             if (listClientes[i] != null && listClientes[i].getDocumento().equals(documentoBuscado)) {
                 clienteEncontrado = listClientes[i];
@@ -434,6 +517,7 @@ public class empresa {
             return "Error: No se encontró ningún cliente con el documento " + documentoBuscado;
         }
 
+<<<<<<< HEAD
 
         String factura = "";
         factura += "          FACTURA / TOTAL CLIENTE       \n";
@@ -453,6 +537,22 @@ public class empresa {
         proyecto[] proyectosCliente = clienteEncontrado.getListProyectos();
 
 
+=======
+        String factura = "";
+        factura += "          FACTURA / TOTAL CLIENTE       \n";
+        factura += "Empresa: " + nombreComercial + " (NIT: " + nit + ")\n";
+        factura += "Cliente: " + clienteEncontrado.getNombreCompleto() + "\n";
+        factura += "Documento: " + clienteEncontrado.getDocumento() + "\n";
+        factura += "Teléfono: " + clienteEncontrado.getTelefono() + "\n";
+
+        factura += "PROYECTOS ASIGNADOS:\n";
+
+        double totalFactura = 0;
+        boolean tieneProyectos = false;
+
+        proyecto[] proyectosCliente = clienteEncontrado.getListProyectos();
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (proyectosCliente != null) {
             for (int i = 0; i < proyectosCliente.length; i++) {
                 if (proyectosCliente[i] != null) {
@@ -462,21 +562,32 @@ public class empresa {
                     factura += "    Método de Pago: " + proyectosCliente[i].getMetodoPago() + "\n";
                     factura += "    Valor Proyecto: $" + proyectosCliente[i].getValorTotal() + "\n";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
                     totalFactura += proyectosCliente[i].getValorTotal();
                 }
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         if (!tieneProyectos) {
             factura += "  (No tiene proyectos asignados actualmente)\n";
         }
 
+<<<<<<< HEAD
 
         factura += "TOTAL A PAGAR: $" + totalFactura + "\n";
 
 
+=======
+        factura += "TOTAL A PAGAR: $" + totalFactura + "\n";
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
         return factura;
     }
 
@@ -573,5 +684,11 @@ public class empresa {
         this.listServiciioAdcional = listServiciioAdcional;
     }
 
+<<<<<<< HEAD
 
 }
+=======
+}
+
+
+>>>>>>> f5315f2ace799d2387d8e6c6e0e558dbd2820bdd
