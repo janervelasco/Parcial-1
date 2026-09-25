@@ -69,23 +69,20 @@ public class empresa{
 
         return respuesta;
     }
-
-    //ACTUALIZAR INFORMACIÓN DEL CLIENTE
-    public boolean actualizarCliente(String documentoClienteActualizar,String nombre,String telefono,String email,String pais) {
+    //Eliminar cliente
+    public boolean eliminarCliente(String documento) {
         boolean respuesta = false;
-        int index = encontrarIndexCliente(documentoClienteActualizar);
+        int index = encontrarIndexCliente(documento);
 
-        if (index != -1) {
-            listClientes[index].setNombreCompleto(nombre);
-            listClientes[index].setTelefono(telefono);
-            listClientes[index].setEmail(email);
-            listClientes[index].setPaisProcedencia(pais);
-
+        if(index != -1){
+            listClientes[index] = null;
             respuesta = true;
         }
 
         return respuesta;
     }
+
+
 
 //--------------------------------------------------------------------------------------------------------
     //REGISTRAR DESARROllADOR
@@ -129,24 +126,19 @@ public class empresa{
 
         return respuesta;
     }
-
-    //ACTUALIZAR INFORMACIÓN DEL DESARROLLADOR
-    public boolean actualizarDesarrollador(String codigoDesarrolladorActualizar,String equipoTrabajo,String nivel,int maxProyectos,double tarifaPorDia,String estado) {
+    //Eliminar desarrollador
+    public boolean eliminarDesarrollador(String codigo) {
         boolean respuesta = false;
-        int index = encontrarIndexDesarrollador(codigoDesarrolladorActualizar);
+        int index = encontrarIndexDesarrollador(codigo);
 
-        if (index != -1) {
-            listDesarrolladores[index].setEquipoTrabajo(equipoTrabajo);
-            listDesarrolladores[index].setNivel(nivel);
-            listDesarrolladores[index].setMaxProyectosSimultaneos(maxProyectos);
-            listDesarrolladores[index].setTarifaPorDia(tarifaPorDia);
-            listDesarrolladores[index].setEstado(estado);
-
+        if(index != -1){
+            listDesarrolladores[index] = null;
             respuesta = true;
         }
 
         return respuesta;
     }
+
 //--------------------------------------------------------------------------------------------------------
 
     //REGISTRAR PROYECTO
@@ -193,10 +185,21 @@ public class empresa{
 
         return respuesta;
     }
-<<<<<<< HEAD
-=======
+    //Eliminar proyecto
+    public boolean eliminarProyecto(String codigo) {
+        boolean respuesta = false;
+        int index = encontrarIndexProyecto(codigo);
+
+        if(index != -1){
+            listProyectos[index] = null;
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
+
 //--------------------------------------------------------------------------------------------------------
->>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
+
 
 
     //REGISTRAR SERVICIO ADICIONAL
@@ -223,10 +226,7 @@ public class empresa{
         }
         return -1;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
     //ACTUALIZAR INFORMACIÓN DEL PROYECTO
     public boolean actualizarServicioAdicional(String codigoActualizar,String nombre,String descripcion,double precio,boolean disponible) {
         boolean respuesta = false;
@@ -243,12 +243,22 @@ public class empresa{
 
         return respuesta;
     }
-<<<<<<< HEAD
-=======
+    //Eliminar servicio adicional
+    public boolean eliminarServicioAdicional(String codigo) {
+        boolean respuesta = false;
+        int index = encontrarIndexServicioAdicional(codigo);
+
+        if(index != -1){
+            listServiciioAdcional[index] = null;
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
 
     //--------------------------------------------------------------------------------------------------------
 
->>>>>>> 84f9bf7914dc855f503b59c9cc33ebebceca1bfc
+
     // CALCULAR INGRESOS TOTALES
     public double calcularIngresosTotales() {
         double ingresosTotales = 0;
@@ -297,10 +307,7 @@ public class empresa{
 
         return false; // Retorna falso si no encontró al cliente o al proyecto
     }
-<<<<<<< HEAD
-    //lista de proyectos
-=======
->>>>>>> b4524ebe14aa4e5f24af96369d7182da394ac856
+
     public String listarProyectos() {
         String reporte = " LISTA DE PROYECTOS \n";
         boolean hayProyectos = false;
@@ -364,7 +371,7 @@ public class empresa{
 
         return resultado;
     }
-    public String validarNumeroPerfecto(String telefonoBuscado) {
+    public String validarNumero(String telefonoBuscado) {
         cliente clienteEncontrado = null;
 
         // 1. Buscamos el cliente por su número de teléfono
